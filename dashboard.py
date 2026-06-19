@@ -107,7 +107,7 @@ with tab2:
     st.subheader("🎯Sales vs Profit")
     fig=px.scatter(filtered, x='Sales', y='Profit',
     color="Category", size="Quantity",
-    hover_data=["sub_category"], title='Sales vs Profit By Category')
+    hover_data=["Sub_Category"], title='Sales vs Profit By Category')
     st.plotly_chart(fig,use_container_width=True)
 
 
