@@ -9,12 +9,13 @@ st.set_page_config(page_title="Superstore Dashboard",page_icon='📊',layout='wi
 
 @st.cache_data(ttl=600)
 def load_data():
-    import pandas as pd
-    return pd.read_csv("data/superstore_clean.csv")
+    df = pd.read_csv("data/superstore_clean.csv")
 
-df=load_data()
-df["Order Date"] = pd.to_datetime(df["Order Date"])
-df["Ship Date"] = pd.to_datetime(df["Ship Date"])
+    df["Order Date"] = pd.to_datetime(df["Order Date"])
+    df["Ship Date"] = pd.to_datetime(df["Ship Date"])
+
+    return df
+
 
 st.title('📊Superstore Sales Dashboard')
 
