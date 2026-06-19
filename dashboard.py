@@ -29,8 +29,9 @@ with st.sidebar:
         default=df['Order Year'].unique())
     with st.form('date_filter'):
         st.write('🗓️Date Range')
-        start=st.date_input('Start date',value=df['Order Date'].min().date())
-        end=st.date_input('End date',value=df['Order Date'].max().date())
+        start = st.date_input("Start date",value=pd.to_datetime(df["Order Date"]).min())
+
+        end = st.date_input("End date",value=pd.to_datetime(df["Order Date"]).max())
         submitted=st.form_submit_button('Apply')
 
     if st.sidebar.button("🔄️Refresh Data"):
