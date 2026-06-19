@@ -10,7 +10,7 @@ st.set_page_config(page_title="Superstore Dashboard",page_icon='📊',layout='wi
 @st.cache_data(ttl=600)
 def load_data():
     import pandas as pd
-    return pd.read_csv("superstore_clean.csv")
+    return pd.read_csv("data/superstore_clean.csv")
 
 import os
 st.write(os.listdir("."))
