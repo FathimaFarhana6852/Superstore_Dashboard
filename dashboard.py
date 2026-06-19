@@ -62,7 +62,7 @@ high_disc_pct =np.percentile(disc_arr , 75) if len(disc_arr) else 0
 high_disc_n = int(np.sum(disc_arr > high_disc_pct)) if len(disc_arr) else 0
 z_scores = (sales_arr - np.mean(sales_arr)) / np.std(sales_arr) if len(sales_arr) else 0
 outlier_n = int(np.sum(np.abs(z_scores) > 3)) if len(z_scores) else 0
-mean_margin = filtered["Profit Margin %"].mean() if len(filtered) else 0
+mean_margin = filtered["Profit Margin%"].mean() if len(filtered) else 0
 
 c1,c2,c3 = st.columns(3)
 c1.metric("Total Sales",f"${filtered['Sales'].sum():,.0f}")
