@@ -12,9 +12,9 @@ def load_data():
     import pandas as pd
     return pd.read_csv("data/superstore_clean.csv")
 
-import os
-st.write(os.listdir("."))
 df=load_data()
+df["Order Date"] = pd.to_datetime(df["Order Date"])
+df["Ship Date"] = pd.to_datetime(df["Ship Date"])
 
 st.title('📊Superstore Sales Dashboard')
 
